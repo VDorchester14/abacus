@@ -5,6 +5,9 @@
 #include "../include/vector2.h"
 #include "../include/vector3.h"
 #include "../include/vector4.h"
+#include "../include/matrix2.h"
+#include "../include/matrix3.h"
+#include "../include/matrix4.h"
 
 
 /*
