@@ -50,11 +50,42 @@ public:
         result.y = this->y - other.y;
         return result;
     }
+    void operator-=(Vector2 other){
+        this->x -= other.x;
+        this->y -= other.y;
+    }
     Vector2 operator+(Vector2 other){
         Vector2 result;
         result.x = this->x + other.x;
         result.y = this->y + other.y;
         return result;
+    }
+    void operator+=(Vector2 other){
+        this->x += other.x;
+        this->y += other.y;
+    }
+    template <typename T>
+    Vector2 operator*(T scalar){
+        Vector2 result;
+        result.x = this->x * scalar;
+        result.y = this->y * scalar;
+        return result;
+    }
+    template <typename T>
+    void operator*=(T scalar){
+        this->x = this->x * scalar;
+        this->y = this->y * scalar;
+    }
+    template <typename T>
+    Vector2 operator/(T scalar){
+        Vector2 result;
+        result.x = this->x / scalar;
+        result.y = this->y / scalar;
+    }
+    template <typename T>
+    void operator/=(T scalar){
+        this->x = this->x / scalar;
+        this->y = this->y / scalar;
     }
 };
 

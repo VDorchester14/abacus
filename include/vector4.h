@@ -71,13 +71,59 @@ public:
         return result;
     }
 
-    Vector4  operator+(Vector4 other){
+    void operator-=(Vector4 other){
+        this->x -= other.x;
+        this->y -= other.y;
+        this->z -= other.z;
+        this->w -= other.w;
+    }
+
+    Vector4 operator+(Vector4 other){
         Vector4 result;
         result.x = this->x + other.x;
         result.y = this->y + other.y;
         result.z = this->z + other.z;
         result.w = this->w + other.w;
         return result;
+    }
+
+    void operator+=(Vector4 other){
+        this->x += other.x;
+        this->y += other.y;
+        this->z += other.z;
+        this->w += other.w;
+    }
+
+    template <typename T>
+    Vector4 operator*(T scalar){
+        Vector4 result;
+        result.x = this->x * scalar;
+        result.y = this->y * scalar;
+        result.z = this->z * scalar;
+        result.w = this->w * scalar;
+        return result;
+    }
+    template <typename T>
+    void operator*=(T scalar){
+        this->x = this->x * scalar;
+        this->y = this->y * scalar;
+        this->z = this->z * scalar;
+        this->w = this->w * scalar;
+    }
+    template <typename T>
+    Vector4 operator/(T scalar){
+        Vector4 result;
+        result.x = this->x / scalar;
+        result.y = this->y / scalar;
+        result.z = this->z / scalar;
+        result.w = this->w / scalar;
+    }
+    template <typename T>
+    void operator/=(T scalar){
+        this->x = this->x / scalar;
+        this->y = this->y / scalar;
+        this->z = this->z / scalar;
+        this->w = this->w / scalar;
     }
 };
 

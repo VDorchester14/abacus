@@ -17,7 +17,7 @@ public:
     {
 
     }
-    
+
     Vector3 normalize(){
         double magnitude = this->magnitude();
         if (magnitude == 0.0){
@@ -55,12 +55,55 @@ public:
         return result;
     }
 
-    Vector3  operator+(Vector3 other){
+    void operator-=(Vector3 other){
+        this->x -= other.x;
+        this->y -= other.y;
+        this->z -= other.z;
+    }
+
+    Vector3 operator+(Vector3 other){
         Vector3 result;
         result.x = this->x + other.x;
         result.y = this->y + other.y;
         result.z = this->z + other.z;
         return result;
+    }
+
+    void operator+=(Vector3 other){
+        this->x += other.x;
+        this->y += other.y;
+        this->z += other.z;
+    }
+
+    template <typename T>
+    Vector3 operator*(T scalar){
+        Vector3 result;
+        result.x = this->x * scalar;
+        result.y = this->y * scalar;
+        result.z = this->z * scalar;
+        return result;
+    }
+
+    template <typename T>
+    void operator*=(T scalar){
+        this->x = this->x * scalar;
+        this->y = this->y * scalar;
+        this->z = this->z * scalar;
+    }
+
+    template <typename T>
+    Vector3 operator/(T Scalar){
+        Vector3 result;
+        result.x = this->x / scalar;
+        result.y = this->y / scalar;
+        result.z = this->z / scalar;
+    }
+
+    template <typename T>
+    void operator/=(T scalar){
+        this->x = this->x / scalar;
+        this->y = this->y / scalar;
+        this->z = this->z / scalar;
     }
 };
 
