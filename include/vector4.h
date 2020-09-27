@@ -117,6 +117,7 @@ public:
         result.y = this->y / scalar;
         result.z = this->z / scalar;
         result.w = this->w / scalar;
+        return result;
     }
     template <typename T>
     void operator/=(T scalar){

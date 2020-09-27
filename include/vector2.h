@@ -81,6 +81,7 @@ public:
         Vector2 result;
         result.x = this->x / scalar;
         result.y = this->y / scalar;
+        return result;
     }
     template <typename T>
     void operator/=(T scalar){

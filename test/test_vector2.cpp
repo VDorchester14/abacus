@@ -1,14 +1,8 @@
 #include <stdio.h>
 #include <iostream>
-#include <assert.h>
 
 #include "../../probatur/include/test_class.h"
 #include "../include/vector2.h"
-#include "../include/vector3.h"
-#include "../include/vector4.h"
-#include "../include/matrix2.h"
-#include "../include/matrix3.h"
-#include "../include/matrix4.h"
 
 
 class Vector2Test : public TestClass{
@@ -25,6 +19,20 @@ public:
         AssertEquals(test3.x, 0.0);
         AssertEquals(test3.y, 0.0);
     }
+    static void test_vector2_addition(){
+        Vector2 test = Vector2(0, 0);
+        Vector2 test1 = Vector2(-1.5, 3.14);
+        Vector2 test2 = Vector2(0.001, 0.0);
+        Vector2 result = test + test1;
+        Vector2 result1 = test1 + test2;
+        Vector2 result2 = test + test2;
+        AssertEquals(result.x, -1.5);
+        AssertEquals(result.y, 3.14);
+        AssertEquals(result1.x, -1.499);
+        AssertEquals(result1.y, 3.14);
+        AssertEquals(result2.x, 0.001);
+        AssertEquals(result2.y, 0.0);
+    }
 };
 
 /*
@@ -32,6 +40,7 @@ public:
 */
 int main(){
     Vector2Test::test_vector2_creation();
+    Vector2Test::test_vector2_addition();
     printf("\nPress any key to exit...");
     std::getchar();
     return 0;

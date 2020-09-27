@@ -92,11 +92,12 @@ public:
     }
 
     template <typename T>
-    Vector3 operator/(T Scalar){
+    Vector3 operator/(T scalar){
         Vector3 result;
         result.x = this->x / scalar;
         result.y = this->y / scalar;
         result.z = this->z / scalar;
+        return result;
     }
 
     template <typename T>
